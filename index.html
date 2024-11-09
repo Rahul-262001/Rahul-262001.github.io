@@ -3,100 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul's Portfolio</title>
+    <title>Rahul Raj R | Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
+        /* Catpucchin Color Palette (Modified with Green) */
+        :root {
+            --rosewater: #f5e0dc;
+            --flamingo: #f2cdcd;
+            --pink: #f5c2e7;
+            --mauve: #cba6f7;
+            --red: #f38ba8;
+            --maroon: #eba0ac;
+            --peach: #fab387;
+            --yellow: #a6e3a1; /* Green instead of yellow */
+            --green: #a6e3a1;
+            --teal: #94e2d5;
+            --sky: #89dceb;
+            --sapphire: #74c7ec;
+            --blue: #89b4fa;
+            --lavender: #b4befe;
+            --text: #cdd6f4;
+            --subtext1: #bac2de;
+            --subtext0: #a6adc8;
+            --overlay2: #9399b2;
+            --overlay1: #7f849c;
+            --overlay0: #6c7086;
+            --surface2: #585b70;
+            --surface1: #45475a;
+            --surface0: #313244;
+            --base: #1e1e2e;
+            --mantle: #181825;
+            --crust: #11111b;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
+            background: var(--base);
+            color: var(--text);
+            transition: background-color 0.5s ease;
         }
-        header {
-            background: #4CAF50;
-            color: #fff;
-            padding: 20px 10px;
+
+        header, footer {
             text-align: center;
+            background: var(--surface1);
+            color: var(--text);
+            padding: 40px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1s ease-out;
         }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 700;
+            color: var(--rosewater);
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        header p a {
+            color: var(--green);
+            font-weight: 400;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        header p a:hover {
+            color: var(--sapphire);
+            transform: scale(1.1);
+        }
+
         .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: var(--surface0);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
         }
+
         h2 {
-            color: #4CAF50;
+            color: var(--blue);
+            border-bottom: 3px solid var(--green);
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            font-size: 2.5em;
+            animation: fadeInLeft 1s ease-in-out;
         }
-        .section {
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--surface1);
+            border-radius: 10px;
+            padding: 20px;
             margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s ease, background-color 0.3s ease;
+            border-left: 6px solid var(--green);
         }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px 0;
-            background: #4CAF50;
-            color: #fff;
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background-color: var(--surface2); /* Slight color pop */
         }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
         a {
-            color: #4CAF50;
+            color: var(--green);
             text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--sapphire);
+            transform: scale(1.05); /* Slight pop on hover */
+        }
+
+        .skill-icons i {
+            font-size: 2.5em;
+            margin: 0 20px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .skill-icons i:hover {
+            transform: translateY(-5px);
+            color: var(--green);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        footer p a {
+            color: var(--green);
+            transition: color 0.3s ease;
+        }
+
+        footer p a:hover {
+            color: var(--sapphire);
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .skill-icons i {
+                font-size: 2em;
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Rahul's Portfolio</h1>
-        <p>Your window into my tech journey and interests</p>
+        <h1>Rahul Raj R</h1>
+        <p><a href="mailto:rahulrajesh85r@gmail.com">rahulrajesh85r@gmail.com</a> | +91 9148520218 | <a href="https://www.linkedin.com/in/rahul-raj-r-a000a8205" target="_blank">LinkedIn</a> | <a href="https://github.com/rahul-262001" target="_blank">GitHub</a></p>
     </header>
+
     <div class="container">
-        <section class="section">
-            <h2>About Me</h2>
-            <p>
-                I’m Rahul, a Computer Science Engineering student and tech enthusiast. 
-                Passionate about Linux, cloud computing, and inspiring others through teaching.
-                With a strong grasp of cloud fundamentals, I scored 90% in an AZ-900 mock test 
-                and 98% in a practice test.
-            </p>
+        <section>
+            <h2>Education</h2>
+            <div class="card"><strong>PES University, Bangalore, Karnataka</strong> | Master of Computer Application (2022 – Present) | GPA: 9.11/10</div>
+            <div class="card"><strong>Jain University, Bangalore, Karnataka</strong> | Bachelor of Computer Application with Cloud Technology and Information Security Specialization (2019 – 2022) | GPA: 8.13/10</div>
+            <div class="card"><strong>Vidya Soudha PU College</strong> | PUC (KSEEB) (2017 – 2019) | Percentage: 80.33%</div>
+            <div class="card"><strong>Widia Poorna Prajna School</strong> | KSEEB (2017) | Percentage: 72.33%</div>
         </section>
-        <section class="section">
-            <h2>Tech Stack & Tools</h2>
-            <ul>
-                <li><strong>Operating Systems:</strong> Ubuntu, Gentoo (cloud-based)</li>
-                <li><strong>Programming Languages:</strong> Python, Bash, JavaScript</li>
-                <li><strong>Package Managers:</strong> APT, Nix, Brew, Snap, Flatpak, AppImage, Guix</li>
-                <li><strong>DevOps & Cloud:</strong> Docker, OpenVPN, MySQL</li>
-            </ul>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="card">
+                <div class="skill-icons">
+                    <i class="fab fa-python"></i>
+                    <i class="fab fa-java"></i>
+                    <i class="fas fa-code"></i>
+                    <i class="fab fa-linux"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fab fa-docker"></i>
+                    <i class="fab fa-kubernetes"></i>
+                </div>
+                <ul>
+                    <li><strong>Programming Languages:</strong> C, C++, Python, Java, Shell script.</li>
+                    <li><strong>Web Development:</strong> HTML, CSS, JavaScript, PHP, Java JSP, Java Servlets.</li>
+                    <li><strong>Operating Systems:</strong> Windows 11, Ubuntu, Kali Linux, Linux Mint, Arch Linux.</li>
+                    <li><strong>Database:</strong> MySQL, BigQuery.</li>
+                    <li><strong>Tools Used:</strong> Microsoft Visual Studio Code, Jupyter Notebook, Virtual Machine, Power BI, Looker Studio, Neovim.</li>
+                    <li><strong>DevOps and Containerization:</strong> Docker, Kubernetes.</li>
+                </ul>
+            </div>
         </section>
-        <section class="section">
-            <h2>Current Projects & Interests</h2>
-            <p>
-                Teaching an introductory Linux class for juniors, managing servers (IP: 194.195.112.240), and exploring new certifications and tools.
-            </p>
+
+        <section>
+            <h2>Project Experience</h2>
+            <div class="card">
+                <strong>Decentralized Home-Based Kubernetes Clusters for Passive Income Generation</strong>
+                <ul>
+                    <li>Designed and implemented a decentralized Home Computing Network (HCN) to address limitations of traditional centralized computing clusters.</li>
+                    <li>Utilized Kubernetes for coordination, and integrated personal hardware as worker nodes to enhance scalability.</li>
+                    <li>Introduced a hybrid model that combines personal hardware with a decentralized network structure for passive income generation.</li>
+                    <li><strong>This Project has been accepted in ICEEEICT IEEE in Tiruchi, Tamil Nadu, India. It won Best Paper in the entire program.</strong></li>
+                    <li>Technologies Used: Kubernetes, Docker, Decentralized Computing, Hybrid Computing Models</li>
+                </ul>
+            </div>
+            <div class="card">
+                <strong>Asset Verification for NFT Marketplace</strong>
+                <ul>
+                    <li>Enhanced NFT security by implementing Asset Verification, ensuring that NFTs are protected from unauthorized access.</li>
+                    <li>Assigned unique alphanumeric keys to each NFT, improving transaction security.</li>
+                    <li>Technologies Used: Blockchain (Meta Mask), NFTs, Security Measures, Asset Verification, HTML, CSS, JavaScript</li>
+                </ul>
+            </div>
         </section>
-        <section class="section">
-            <h2>Beliefs & Values</h2>
-            <p>
-                I believe in the power of knowledge sharing and simplifying complex tech. 
-                From preferring MySQL over Oracle to enjoying physical books, simplicity and tangibility matter to me.
-            </p>
-        </section>
-        <section class="section">
-            <h2>Fun Fact</h2>
-            <p>
-                I hold a range of subscriptions, from Notion Premium to Spotify Premium, balancing my work life with music, reading, and streaming.
-            </p>
-        </section>
-        <section class="section">
-            <h2>Connect with Me</h2>
-            <p>
-                <a href="https://github.com/Rahul-262001" target="_blank">GitHub</a> | 
-                <a href="#" target="_blank">LinkedIn</a> | 
-                <a href="#" target="_blank">Twitter</a>
-            </p>
+
+        <section>
+            <h2>Internship Experience</h2>
+            <div class="card">
+                <strong>Technical Intern | Arvind Fashions Ltd | IT Department | March 2024 – June 2024</strong>
+                <ul>
+                    <li>Excelled in utilizing BigQuery, Power BI, and Looker Studio to develop impactful dashboards.</li>
+                    <li>Gained hands-on experience in Python for data analytics, handling advanced queries and visualizations from BigQuery.</li>
+                    <li>Developed an API using Java for enhancing internal processes.</li>
+                </ul>
+            </div>
         </section>
     </div>
+
     <footer>
-        <p>&copy; 2024 Rahul's Portfolio</p>
+        <p>&copy; 2024 Rahul Raj R | <a href="https://rahulrajesh85r.wixsite.com/rahul-raj-r" target="_blank">Portfolio</a></p>
     </footer>
 </body>
 </html>
